@@ -128,7 +128,6 @@ function StepForward() {
     for (var y = 0; y < GameBoardObj.height; y++) {
         for (var x = 0; x < GameBoardObj.width; x++) {
             var neighbors = GameBoardObj.getNumberOfNeighbors(x, y);
-            alert(neighbors);
             if (GameBoardObj.getCoord(x, y) == " ") { // the space character is a dead cell
                 if (neighbors == 3)
                     GameBoardTmp.setCoord(x, y, "*");
