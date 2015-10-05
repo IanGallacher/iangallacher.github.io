@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="lifeframework.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Game of Life</h1>
+</div>
+
+<div class="container">
+    <button id="btn-stop" class="btn btn-default" type="button" onclick="GameStop()">Stop</button>
+    <button id="btn-start" class="btn btn-default" type="button" onclick="GameRun()">Start</button>
+    <button id="btn-step" class="btn btn-default" type="button" onclick="GameStep();">Step</button>
+    <button id="btn-reset" class="btn btn-default" type="button" onclick="GameReset()">Reset</button>
+
+    <button id="btn-reset" class="btn btn-default" type="button" onclick="GameClear()">Clear</button>
+    <button id="btn-test" class="btn btn-default" type="button" onclick="RunTests()">Test (some) Code</button>
+    <div>
+    <textarea id="game-board" class="game-board-enabled">
+
+    </textarea>
+    </div>
+</div>
+
+<div class="container">
+    <div id="test-result">
+    </div>
+</div>
+
+<script src="lifegame.js"></script>
+<script src="lifetest.js"></script>
+</body>
+</html>
