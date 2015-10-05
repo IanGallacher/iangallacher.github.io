@@ -135,25 +135,30 @@ function TestGameBoardSingleNeighbor()
             // without fear of them being overwritten
 
             //test to see if the tile to the right exists.
-            if (GameBoardTest.getCoord(row + 1, col) != "-1") {
-                GameBoardTest.setCoord(row + 1, col, "1");
+            if (GameBoardTest.getCoord(col + 1, row) != "-1") {
+                GameBoardTest.setCoord(col + 1, row, "1");
+                console.log(GameBoardTest.theArray());
+                console.log(col);
 
                 // if the tile to the right does not exist, place it below the current tile
-            } else if (GameBoardTest.getCoord(row, col + 1) != "-1") {
-                GameBoardTest.setCoord(row, col + 1, "1");
+            } else if (GameBoardTest.getCoord(col, row + 1) != "-1") {
+                GameBoardTest.setCoord(col, row + 1, "1");
 
                 // if the tile to the below does not exist, place it above the current tile
                 // Yes, we have technically tested that scenario before, but lets just try to make it pass for sane code.
-            } else if (GameBoardTest.getCoord(row, col-1) != "-1") {
-                GameBoardTest.setCoord(row, col-1, "1");
+            } else if (GameBoardTest.getCoord(col, row-1) != "-1") {
+                GameBoardTest.setCoord(col, row-1, "1");
             }
 
             var neighbors = GameBoardTest.getNumberOfNeighbors(col, row);
             if (neighbors != 1) {
                 result += "<div class='alert alert-danger' role='alert'>Single Neighbor test failed at "
-                    + row+", "+col + "</div>";
+                    + col+", "+ row+ "</div>";
 
                 testFailed = true;
+                console.log(col +',' + row);
+                console.log(neighbors);
+                console.log(GameBoardTest.theArray());
             }
         }
     }

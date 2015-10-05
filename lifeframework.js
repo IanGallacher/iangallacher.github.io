@@ -179,10 +179,10 @@ function GameStop() {
 
 function GameStep()
 {
-    StepForward();
-    DrawGameBoard();
     // Don't update if the game is running and taking care of updates for us.
     if(GameRunning == false){
+        StepForward();
+        DrawGameBoard();
     }
 }
 function GameReset() {
