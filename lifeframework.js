@@ -130,7 +130,7 @@ function StepForward() {
             var neighbors = GameBoardObj.getNumberOfNeighbors(x, y);
             if (GameBoardObj.getCoord(x, y) == " ") { // the space character is a dead cell
                 if (neighbors == 3)
-                    GameBoardTmp.setCoord(x, y, "*");
+                    GameBoardTmp.setCoord(x, y, GetLocalValue(x,y));
                 else GameBoardTmp.setCoord(x, y, " ");
             } else {
                 if (neighbors <= 1)
@@ -138,7 +138,7 @@ function StepForward() {
                 else if (neighbors >= 4)
                     GameBoardTmp.setCoord(x, y, " ");
                 else
-                    GameBoardTmp.setCoord(x, y, "*");
+                    GameBoardTmp.setCoord(x, y, GetLocalValue(x,y));
             }
         }
     }
@@ -151,6 +151,21 @@ function StepForward() {
     }
 }
 
+function GetLocalValue(x,y)
+{
+    for(var row = -1; row<=1;row++)
+    {
+        for(var col=-1;col<=1;col++)
+        {
+            if(GameBoardObj.getCoord(x+col,y+row) != " " && GameBoardObj.getCoord(x+col,y+row) != "-1")
+            {
+                return GameBoardObj.getCoord(x+col,y+row);
+                break;
+            }
+        }
+    }
+    return "*";
+}
 
 // UI Functions
 function DisableGameBoard()
