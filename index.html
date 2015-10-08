@@ -29,6 +29,26 @@
     </div>
 </div>
 
+<div id="tutorial" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-content">
+        <div class="modal-container">
+            Welcome to Conway's Game of life, implemented by Ian Gallacher.
+
+            The rules are straightforward.
+
+            Feel free to type in the text box, and see what happens when you press "Start."
+
+            Any cell that is alive and zero or just one living neighbor is dead in the next generation.
+            Any cell that is alive and has two or three living neighbors lives happily on to the next generation.
+            Any cell that is alive and has four or more neighbors get "smothered" and is dead in the next generation.
+            Any cell that is dead and has exactly three neighbors is "born", and is thus alive in the next generation.
+        </div>
+    </div>
+    <button id="btn-tutorial-close" class="btn btn-default" type="button" data-toggle="modal" data-target="#tutorial">
+        Close
+    </button>
+</div>
+
 <div class="container">
     <div id="test-result">
     </div>
