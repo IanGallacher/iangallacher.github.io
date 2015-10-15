@@ -2,7 +2,7 @@
     background-color: red;
 }
 .grey-background {
-    background-color: #ccc;
+    background-color: #EEE;
 }
 .blue-background {
     background-color: lightblue;
@@ -19,6 +19,11 @@
 .portfolio-header
 {
     text-align: center;
+}
+
+.email {
+    display: inline;
+    color: #666;
 }
 
 /* Navbar */
