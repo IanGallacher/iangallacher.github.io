@@ -1,5 +1,28 @@
+.red-background {
+    background-color: red;
+}
+.grey-background {
+    background-color: #ccc;
+}
 .blue-background {
-    background-color: aqua;
+    background-color: lightblue;
+}
+.header-text
+{
+    padding: 50px;
+}
+.portfolio-header
+{
+    text-align: center;
+}
+
+.game-background {
+    background:#FAF8EF;
+}
+
+.game-btn-right {
+    position:relative;
+    float:right;
 }
 
 .game-board-enabled {
@@ -11,7 +34,6 @@
     resize: none;
     font-family:monospace;
 }
-
 
 .game-board-disabled {
     width: 100%;
@@ -33,4 +55,3 @@
     -ms-user-select: none;
     user-select: none;
 }
-
