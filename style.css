@@ -10,12 +10,48 @@
 .header-text
 {
     padding: 50px;
+    font-size:5em;
+}
+.subtitle-text{
+    padding:25px;
+    font-size:2em;
 }
 .portfolio-header
 {
     text-align: center;
 }
 
+/* Navbar */
+.nav-menu, .nav-contact  {
+    display: inline-block;
+}
+.nav-contact {
+    margin-top: 13px;
+    float:right;
+}
+
+.nav-menu li{
+    display: inline;
+    position: relative;
+    float:left;
+    list-style-type: none;
+    font-size: 1.2em;
+    margin-right:30px;
+}
+.btn-active
+{
+    font-size: 2em;
+}
+.nav-contact li{
+    display: inline;
+    position: relative;
+    float:right;
+    list-style-type: none;
+    font-size: 1.2em;
+    margin-left:15px;
+}
+
+/* Game */
 .game-background {
     background:#FAF8EF;
 }
@@ -33,6 +69,7 @@
     margin-right: auto;
     resize: none;
     font-family:monospace;
+    border-radius: 4px;
 }
 
 .game-board-disabled {

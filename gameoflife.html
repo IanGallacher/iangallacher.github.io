@@ -16,21 +16,16 @@
 
 <body class="game-background">
 
-<div class="container">
-    <h1>Game of Life</h1>
-</div>
 
-<div class="container">
-    <button id="btn-reset" class="btn btn-default" type="button" onclick="GameReset()">Reset</button>
-
-    <button id="btn-clear" class="btn btn-default" type="button" onclick="GameClear()">Clear</button>
-    <button id="btn-test" class="btn btn-default game-btn-right" type="button" onclick="RunTests()"
-            data-toggle="collapse" data-target="#test-result">Test (some) Code
-    </button>
-
-    <button id="btn-tutorial-open" class="btn btn-default" type="button" data-toggle="modal" data-target="#tutorial">
-        Tutorial
-    </button>
+<div class="container-fluid blue-background">
+    <ul class="nav-menu">
+        <li><a href="/index.html">Home</a></li>
+        <li><div class="btn-active">Game of Life</div></li>
+    </ul>
+    <ul class="nav-contact">
+        <li><a href="https://www.linkedin.com/pub/ian-gallacher/62/755/3b5">LinkedIn</a></li>
+        <li><a href="github.com/iangallacher">GitHub</a></li>
+    </ul>
 </div>
 <br>
 <div class="container">
@@ -44,8 +39,18 @@
     <button id="btn-step" class="btn btn-default" type="button" onclick="GameStep();">
         <img class="btn-img" src="stepicon.png">
     </button>
-</div>
 
+    <button id="btn-reset" class="btn btn-default" type="button" onclick="GameReset()">Reset</button>
+
+    <button id="btn-clear" class="btn btn-default" type="button" onclick="GameClear()">Clear</button>
+    <button id="btn-test" class="btn btn-default game-btn-right" type="button" onclick="RunTests()"
+            data-toggle="collapse" data-target="#test-result">Test (some) Code
+    </button>
+
+    <button id="btn-tutorial-open" class="btn btn-default" type="button" data-toggle="modal" data-target="#tutorial">
+        Tutorial
+    </button>
+</div>
 
 <div class="container">
     <br>
@@ -101,6 +106,14 @@
         </div>
     </div>
 </div>
+
+<div class="container-fluid">
+    <div class="container">
+        <a href="https://www.linkedin.com/pub/ian-gallacher/62/755/3b5">LinkedIn</a>
+        <a href="github.com/iangallacher">GitHub</a>
+    </div>
+</div>
+
 
 
 <script src="lifegame.js"></script>
