@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<!-- saved from url=(0045)http://iangallacher.github.io/gameoflife.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <title>Gallacher - Game of Life</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="./Gallacher - Game of Life_files/jquery.min.js"></script>
+    <script src="./Gallacher - Game of Life_files/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./Gallacher - Game of Life_files/bootstrap.min.css">
 
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./Gallacher - Game of Life_files/style.css">
 
     <script src="lifeframework.js"></script>
 </head>
@@ -19,7 +19,7 @@
 
 <div class="container-fluid blue-background">
     <ul class="nav-menu">
-        <li><a href="/index.html">Home</a></li>
+        <li><a href="http://iangallacher.github.io/index.html">Home</a></li>
         <li><div class="btn-active">Game of Life</div></li>
     </ul>
     <ul class="nav-contact">
@@ -30,22 +30,21 @@
 </div>
 <br>
 <div class="container">
-    <button id="btn-stop" class="btn btn-default" type="button" onclick="GameStop()">
-        <img class="btn-img" src="pauseicon.png">
-    </button></button>
-
-    <button id="btn-start" class="btn btn-default" type="button" onclick="GameRun()">
-        <img class="btn-img" src="playicon.png">
-    </button>
-    <button id="btn-step" class="btn btn-default" type="button" onclick="GameStep();">
-        <img class="btn-img" src="stepicon.png">
+    <button id="btn-stop" class="btn btn-default" type="button" onclick="btnStop()">
+        <img class="btn-img" src="./Gallacher - Game of Life_files/pauseicon.png">
     </button>
 
-    <button id="btn-reset" class="btn btn-default" type="button" onclick="GameReset()">Reset</button>
+    <button id="btn-start" class="btn btn-default" type="button" onclick="btnStart()">
+        <img class="btn-img" src="./Gallacher - Game of Life_files/playicon.png">
+    </button>
+    <button id="btn-step" class="btn btn-default" type="button" onclick="btnStep();">
+        <img class="btn-img" src="./Gallacher - Game of Life_files/stepicon.png">
+    </button>
 
-    <button id="btn-clear" class="btn btn-default" type="button" onclick="GameClear()">Clear</button>
-    <button id="btn-test" class="btn btn-default game-btn-right" type="button" onclick="RunTests()"
-            data-toggle="collapse" data-target="#test-result">Test (some) Code
+    <button id="btn-reset" class="btn btn-default" type="button" onclick="btnReset()">Reset</button>
+
+    <button id="btn-clear" class="btn btn-default" type="button" onclick="btnClear()">Clear</button>
+    <button id="btn-test" class="btn btn-default game-btn-right" type="button" onclick="RunTests()" data-toggle="collapse" data-target="#test-result">Test (some) Code
     </button>
 
     <button id="btn-tutorial-open" class="btn btn-default" type="button" data-toggle="modal" data-target="#tutorial">
@@ -61,7 +60,6 @@
 
 <div class="container">
     <textarea id="game-board" class="game-board-enabled">
-
     </textarea>
 </div>
 
@@ -97,8 +95,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button id="btn-tutorial-close" class="btn btn-default" type="button" data-toggle="modal"
-                            data-target="#tutorial">
+                    <button id="btn-tutorial-close" class="btn btn-default" type="button" data-toggle="modal" data-target="#tutorial">
                         Close
                     </button>
                 </div>
@@ -111,7 +108,7 @@
 <div class="container-fluid">
     <div class="container">
         <a href="https://www.linkedin.com/pub/ian-gallacher/62/755/3b5">LinkedIn</a>
-        <a href="github.com/iangallacher">GitHub</a>
+        <a href="http://iangallacher.github.io/github.com/iangallacher">GitHub</a>
         <p class="email">TheIanGallacher@outlook.com</p>
     </div>
 </div>
@@ -119,6 +116,6 @@
 
 
 <script src="lifegame.js"></script>
-<script src="lifetest.js"></script>
-</body>
-</html>
+<script src="./Gallacher - Game of Life_files/lifetest.js"></script>
+
+</body></html>

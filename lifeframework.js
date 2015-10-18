@@ -123,7 +123,7 @@ function DrawGameBoard() {
  Any cell that is dead and has exactly three neighbors is "born", and is thus alive in the next generation.
  */
 
-function StepForward() {
+function GameStep() {
     //Apply all the rules. We have to use two arrays otherwise changing cells with change the results of the other cells
     for (var y = 0; y < GameBoardObj.height; y++) {
         for (var x = 0; x < GameBoardObj.width; x++) {
@@ -183,31 +183,50 @@ function EnableGameBoard()
 }
 
 function GameRun() {
-    GameRunning = true;
-    DisableGameBoard();
+    if(GameRunning == true){
+		GameStep();
+		setTimeout( function() { GameRun(); },300);
+        DrawGameBoard();
+		console.log("asdf");
+	}
 }
 
-function GameStop() {
+function GameStop(){
     GameRunning = false;
     EnableGameBoard();
 }
 
-function GameStep()
+function btnStart() {
+    GameRunning = true;
+    DisableGameBoard();
+	
+	// We don't want to run the game right away for UX reasons.
+	// Changing the background and the content is confusing. 
+	setTimeout( function() { GameRun(); },100);
+}
+
+function btnStop() {
+	// Even though there is only one function inside this function,
+	// we are seperating the btn callbacks and functionality.
+	GameStop();
+}
+
+function btnStep() //This is called when we press the gamestart button. Try to seperate this logic later. 
 {
     // Don't update if the game is running and taking care of updates for us.
     if(GameRunning == false){
-        StepForward();
+        GameStep();
         DrawGameBoard();
     }
 }
-function GameReset() {
+function btnReset() {
     GameStop();
     GameBoardObj.init();
     DrawGameBoard();
 }
 
 
-function GameClear() {
+function btnClear() {
     GameStop();
     GameBoardObj.clear();
     DrawGameBoard();
