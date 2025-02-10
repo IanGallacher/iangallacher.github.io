@@ -1,7 +1,21 @@
 <script lang="ts">
-  import type { ResumeEntry } from '$lib/types';
+  import type { Profile, ResumeEntry } from '$lib/types';
   import Resume from './Resume.svelte';
   import Sidebar from './Sidebar.svelte';
+
+  const profile: Readonly<Profile> = {
+    name: 'Ian Gallacher',
+    externalLinks: [
+      {
+        label: 'LinkedIn',
+        href: 'https://www.linkedin.com/in/ian-gallacher/',
+      },
+      {
+        label: 'GitHub',
+        href: 'https://github.com/IanGallacher',
+      },
+    ],
+  };
 
   const resumeEntries: ReadonlyArray<ResumeEntry> = [
     {
@@ -56,6 +70,6 @@
 </script>
 
 <div class="flex flex-row min-h-screen">
-  <Sidebar />
+  <Sidebar {profile} />
   <Resume {resumeEntries} />
 </div>

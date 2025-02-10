@@ -1,18 +1,8 @@
 <script lang="ts">
-  type ExternalLink = {
-    label: string;
-    href: string;
-  };
-  const externalLinks: ReadonlyArray<ExternalLink> = [
-    {
-      label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/ian-gallacher/',
-    },
-    {
-      label: 'GitHub',
-      href: 'https://github.com/IanGallacher',
-    },
-  ];
+  import type { ExternalLink, Profile } from '$lib/types';
+
+  type Props = { profile: Profile };
+  const { profile }: Props = $props();
 </script>
 
 {#snippet externalLinkDiv(externalLink: ExternalLink)}
@@ -27,9 +17,9 @@
 {/snippet}
 
 <div class="flex flex-col items-center w-2xl pt-10 bg-slate-500">
-  <h1 class="text-4xl">Ian Gallacher</h1>
+  <h1 class="text-4xl">{profile.name}</h1>
   <external-links class="flex flex-col gap-2">
-    {#each externalLinks as externalLink (externalLink.label)}
+    {#each profile.externalLinks as externalLink (externalLink.label)}
       {@render externalLinkDiv(externalLink)}
     {/each}
   </external-links>
