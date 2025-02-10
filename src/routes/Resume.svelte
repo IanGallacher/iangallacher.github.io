@@ -30,7 +30,7 @@
   </resume-entry>
 {/snippet}
 
-<resume-content class="flex flex-col gap-4 text-white bg-black p-16">
+<resume-content class="flex flex-col gap-4 text-white bg-slate-950 p-16">
   <h2 class="text-4xl">Resume</h2>
   {#each resumeEntries as resumeEntry (resumeEntry.name)}
     {@render resumeEntryDiv(resumeEntry)}

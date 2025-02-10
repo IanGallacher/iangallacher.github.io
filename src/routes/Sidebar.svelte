@@ -16,7 +16,7 @@
   </external-link>
 {/snippet}
 
-<div class="flex flex-col gap-2 items-center w-2xl pt-10 bg-slate-500">
+<div class="flex flex-col gap-2 items-center w-2xl pt-10 bg-blue-200">
   <h1 class="text-4xl">{profile.name}</h1>
   <img
     alt={profile.name + ' Profile Picture'}
