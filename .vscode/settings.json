@@ -6,5 +6,6 @@
   },
   "workbench.editor.customLabels.patterns": {
     "**/+*": "${dirname}/${filename}.${extname}"
-  }
+  },
+  "cSpell.words": ["Gallacher"]
 }
