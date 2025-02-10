@@ -7,5 +7,12 @@
   "workbench.editor.customLabels.patterns": {
     "**/+*": "${dirname}/${filename}.${extname}"
   },
-  "cSpell.words": ["Gallacher"]
+  "cSpell.words": [
+    "Axia",
+    "Drunkn",
+    "Gallacher",
+    "Innerworld",
+    "Munky",
+    "Toptal"
+  ]
 }
