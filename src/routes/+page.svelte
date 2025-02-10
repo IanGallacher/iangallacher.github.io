@@ -5,6 +5,7 @@
 
   const profile: Readonly<Profile> = {
     name: 'Ian Gallacher',
+    img: 'https://avatars.githubusercontent.com/u/7298650?v=4',
     externalLinks: [
       {
         label: 'LinkedIn',

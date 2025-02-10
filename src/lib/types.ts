@@ -5,6 +5,7 @@ export type ExternalLink = {
 
 export type Profile = {
   name: string;
+  img: string;
   externalLinks: ReadonlyArray<ExternalLink>;
 };
 
