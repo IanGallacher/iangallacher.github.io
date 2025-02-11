@@ -7,7 +7,7 @@
 
 {#snippet resumeEntryDiv(entry: ResumeEntry)}
   <resume-entry>
-    <resume-job-header class="flex flex-row gap-4 items-center">
+    <resume-job-header class="flex flex-row gap-2 items-center">
       <h3 class="text-lg font-semibold">
         {entry.name}
       </h3>
