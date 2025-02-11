@@ -16,8 +16,13 @@
   </external-link>
 {/snippet}
 
-<div class="flex flex-col gap-2 items-center w-2xl pt-10 bg-blue-500">
-  <h1 class="text-4xl">{profile.name}</h1>
+<div class="flex flex-col gap-4 items-center w-2xl pt-10 bg-blue-500">
+  <name-and-location class="flex flex-col gap-1 items-center">
+    <h1 class="text-4xl">{profile.name}</h1>
+    {#if profile.location}
+      <div class="text-xl font-extralight">{profile.location}</div>
+    {/if}
+  </name-and-location>
   <img
     alt={profile.name + ' Profile Picture'}
     class="rounded-full"
