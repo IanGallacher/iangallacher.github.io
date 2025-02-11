@@ -7,14 +7,14 @@
 
 {#snippet resumeEntryDiv(entry: ResumeEntry)}
   <resume-entry>
-    <resume-title class="flex flex-row gap-4 items-center">
-      <h3 class="text-lg">
+    <resume-job-header class="flex flex-row gap-4 items-center">
+      <h3 class="text-lg font-semibold">
         {entry.name}
       </h3>
       <span class="font-thin">
         ({entry.startAt} - {entry.endAt})
       </span>
-    </resume-title>
+    </resume-job-header>
     <div>
       {entry.description}
     </div>
