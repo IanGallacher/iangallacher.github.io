@@ -21,26 +21,36 @@
   const resumeEntries: ReadonlyArray<ResumeEntry> = [
     {
       name: 'Innerworld - Software Engineer',
+      description:
+        'Led and implemented the web backend for an online VR therapy alternative.Led and implemented the web backend for an online VR therapy alternative.',
       startAt: 'Sep 2022',
       endAt: 'Jun 2024',
     },
     {
       name: 'AppFolio, Inc. - Software Engineer',
+      description:
+        'Developed automation to deliver tax documents and contest chargebacks.',
       startAt: 'Jul 2021',
       endAt: 'Sep 2022',
     },
     {
       name: 'Toptal - Senior Software Engineer',
+      description:
+        'Completed contract work for various companies as one of the top 3% of developers hired by the platform.Completed contract work for various companies as one of the top 3% of developers hired by the platform.',
       startAt: 'Sep 2020',
       endAt: 'May 2021',
     },
     {
       name: 'AxiaMed - Software Engineer',
+      description:
+        'Wrote highly available and reliable payment processing and reporting software for hospitals.Wrote highly available and reliable payment processing and reporting software for hospitals.',
       startAt: 'Mar 2019',
       endAt: 'Aug 2020',
     },
     {
       name: 'ParentSquare - Full Stack Engineer',
+      description:
+        'Wrote and maintained parent teacher communication software. Created and maintained tools for the customer success team to handle the rapid company growth. Optimized performance of API endpoints, over 270 times faster in some cases. Tightened security of endpoints to protect user data.',
       startAt: 'May 2018',
       endAt: 'Mar 2019',
     },
@@ -63,7 +73,6 @@
       name: 'Dragonfly Software - Client Side Game Developer (Contract Work)',
       startAt: 'Feb 2016',
       endAt: 'Aug 2016',
-
       description:
         'During my time at Dragonfly Software, I created a system that allows for threaded loading of assets, allowing for very short loading screens. In addition, I created a UI that will automatically scale to any size device, including non standard resolutions. Most of my work involved optimizing the code base for maintainability and performance. The game I worked on is currently unreleased.',
     },
