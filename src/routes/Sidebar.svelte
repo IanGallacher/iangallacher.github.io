@@ -28,7 +28,7 @@
     class="rounded-full"
     src={profile.img}
   />
-  <external-links class="flex flex-col gap-2">
+  <external-links class="flex flex-col gap-2 font-light">
     {#each profile.externalLinks as externalLink (externalLink.label)}
       {@render externalLinkDiv(externalLink)}
     {/each}
