@@ -10,7 +10,7 @@ export type Profile = {
 };
 
 export type ResumeEntry = {
-  accomplishments: ReadonlyArray<string>;
+  accomplishments?: ReadonlyArray<string>;
   name: string;
   description?: string;
   startAt: string;
