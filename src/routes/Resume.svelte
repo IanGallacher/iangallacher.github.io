@@ -11,11 +11,11 @@
       <h3 class="text-lg font-semibold">
         {entry.name}
       </h3>
-      <span class="font-thin">
+      <span class="font-light">
         ({entry.startAt} - {entry.endAt})
       </span>
     </resume-job-header>
-    <div>
+    <div class="text-offwhite">
       {entry.description}
     </div>
     {#if entry.accomplishments}
