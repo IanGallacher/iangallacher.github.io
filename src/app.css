@@ -1,1 +1,6 @@
 @import 'tailwindcss';
+
+@theme {
+  --color-sidebar: #6d8ce8;
+  --color-page-content: #0b0a2a;
+}

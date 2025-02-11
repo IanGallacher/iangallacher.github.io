@@ -16,7 +16,7 @@
   </external-link>
 {/snippet}
 
-<div class="flex flex-col gap-4 items-center w-2xl pt-10 bg-blue-500">
+<div class="flex flex-col gap-4 items-center w-2xl pt-10 bg-sidebar">
   <name-and-location class="flex flex-col gap-1 items-center">
     <h1 class="text-4xl">{profile.name}</h1>
     {#if profile.location}
