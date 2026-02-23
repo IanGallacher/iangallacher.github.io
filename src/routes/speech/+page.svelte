@@ -203,7 +203,7 @@
 </script>
 
 <style>
-  body {
+  :global(body) {
     font-family: Arial, sans-serif;
     margin: 0;
     background: #101010;
