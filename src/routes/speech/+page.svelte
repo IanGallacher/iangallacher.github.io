@@ -191,9 +191,9 @@
   let currentUtterance = null;
 
   function updateUrlState(param, state) {
-    const url = new URL(window.location);
-    url.searchParams.set(param, state);
-    window.history.replaceState(null, '', url);
+    // const url = new URL(window.location);
+    // url.searchParams.set(param, state);
+    // window.history.replaceState(null, '', url);
   }
 
   function setActiveTab(index) {
@@ -290,20 +290,12 @@
               {:else}
                 <div class="flex flex-wrap gap-3">
                   {#each tab.buttons as btn}
-										<button
-  class="flex-1 min-w-[70px]
-         bg-[#303030] text-[#d0d0d0]
-         rounded-2xl
-         px-4 py-4
-         text-xl sm:text-lg
-         active:bg-[#606060]
-         active:scale-95
-         transition
-         whitespace-nowrap"
-  on:click={() => speak(btn)}
->
-  {btn}
-</button>
+                    <button
+                      class="flex-1 w-full sm:w-auto bg-[#303030] text-[#d0d0d0] rounded-2xl px-4 py-4 text-xl sm:text-lg active:bg-[#606060] active:scale-95 transition"
+                      on:click={() => speak(btn)}
+                    >
+                      {btn}
+                    </button>
                   {/each}
                 </div>
               {/if}
