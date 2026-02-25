@@ -1,7 +1,22 @@
+<svelte:head>
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</svelte:head>
 <script lang="ts">
   import { onMount } from 'svelte';
 
   let tabsData = [
+    {
+      name: "Common",
+      buttons: [
+        "Yes",
+        "No",
+        "Hotpack",
+        "Pills",
+				"Too hot",
+				"To cold",
+				"I'm hungry"
+      ]
+    },
     {
       name: "Urgency",
       buttons: [
@@ -209,139 +224,167 @@
     background: #101010;
     color: #d0d0d0;
   }
+</style><header class="bg-[#1a1a1a] text-[#d0d0d0] text-center 
+               text-xl sm:text-2xl 
+               py-4 sm:py-6 
+               font-semibold tracking-wide">
+  Communication Helper
+</header>
 
-  header {
-    background: #1a1a1a;
-    color: #d0d0d0;
-    padding: 15px;
-    text-align: center;
-    font-size: 20px;
-  }
+<div class="bg-[#101010] min-h-screen">
 
-  #tabs {
-    display: flex;
-    overflow-x: auto;
-    background: #181818;
-    padding: 5px;
-  }
+  <!-- ========================= -->
+  <!-- 📱 MOBILE: ACCORDION + 📲 TABLET+: TABS COMBINED -->
+  <!-- ========================= -->
+  <div class="px-3 py-4 space-y-4 bg-[#101010]">
 
-  .tab {
-    padding: 12px 20px;
-    cursor: pointer;
-    background: #282828;
-    border-right: 1px solid #444;
-    color: #d0d0d0;
-    white-space: nowrap;
-  }
+    <!-- MOBILE ACCORDION VIEW (sm and below) -->
+    <div class="md:hidden">
+      {#each tabsData as tab, index}
+        <div class="bg-[#181818] border border-[#444] rounded-2xl overflow-hidden">
+          <button
+            class="w-full flex justify-between items-center
+                   px-4 py-4
+                   text-xl
+                   bg-[#282828] text-[#d0d0d0]
+                   active:bg-[#444]
+                   transition"
+            on:click={() => activeTab = activeTab === index ? -1 : index}
+          >
+            <span class="font-semibold">{tab.name}</span>
+            <span>{activeTab === index ? "▾" : "▸"}</span>
+          </button>
 
-  .tab.active {
-    background: #444;
-    font-weight: bold;
-    color: #fff;
-  }
+          {#if activeTab === index}
+            <div class="px-3 py-4 border-t border-[#444] bg-[#181818]">
+              {#if tab.layout === 'two-column'}
+                <div class="flex flex-col gap-6">
+                  {#each tab.sections as section}
+                    <div>
+                      <div class="text-[#e0e0e0] font-bold text-lg mb-3">
+                        {section.sectionName}
+                      </div>
 
-  #content {
-    padding: 20px;
-    background: #181818;
-    border-top: 2px solid #444;
-  }
-
-  .section-title {
-    font-weight: bold;
-    margin: 20px 0 10px;
-    font-size: 18px;
-    color: #e0e0e0;
-  }
-
-  .button-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 20px;
-    justify-content: flex-start;
-  }
-
-  .two-column-wrapper {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-  }
-
-  .two-column-section {
-    flex: 1 1 300px;
-    display: grid;
-    gap: 12px;
-  }
-
-  .two-column-section.three-column {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .two-column-section.two-column {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .two-column-section .section-title {
-    grid-column: 1 / -1;
-  }
-
-  .speak-button {
-    padding: 14px 18px;
-    font-size: 26px;
-    background: #303030;
-    color: #d0d0d0;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.2s;
-    white-space: normal;
-    text-align: center;
-    max-width: 100%;
-  }
-
-  .speak-button:hover {
-    background: #808080;
-  }
-
-  .speak-button:active {
-    background: #606060;
-    transform: scale(0.98);
-  }
-</style>
-
-<header>Communication Helper</header>
-
-<div id="tabs">
-  {#each tabsData as tab, index}
-    <div 
-      class="tab {activeTab === index ? 'active' : ''}" 
-      on:click={() => setActiveTab(index)}>
-      {tab.name}
-    </div>
-  {/each}
-</div>
-
-<div id="content">
-  {#if tabsData[activeTab].layout === 'two-column'}
-    <div class="two-column-wrapper">
-      {#each tabsData[activeTab].sections as section}
-        <div class="two-column-section {section.layout}">
-          <div class="section-title">{section.sectionName}</div>
-          {#each section.buttons as row}
-            <div class="button-grid">
-              {#each row as btn}
-                <button class="speak-button" on:click={() => speak(btn)}>{btn}</button>
-              {/each}
+                      {#each section.buttons as row}
+                        <div class="flex flex-wrap gap-3 mb-3">
+                          {#each row as btn}
+                            <button
+                              class="flex-1 min-w-[70px]
+                                     bg-[#303030] text-[#d0d0d0]
+                                     rounded-2xl
+                                     px-4 py-4
+                                     text-xl sm:text-lg
+                                     active:bg-[#606060]
+                                     active:scale-95
+                                     transition"
+                              on:click={() => speak(btn)}
+                            >
+                              {btn}
+                            </button>
+                          {/each}
+                        </div>
+                      {/each}
+                    </div>
+                  {/each}
+                </div>
+              {:else}
+                <div class="flex flex-wrap gap-3">
+                  {#each tab.buttons as btn}
+										<button
+  class="flex-1 min-w-[70px]
+         bg-[#303030] text-[#d0d0d0]
+         rounded-2xl
+         px-4 py-4
+         text-xl sm:text-lg
+         active:bg-[#606060]
+         active:scale-95
+         transition
+         whitespace-nowrap"
+  on:click={() => speak(btn)}
+>
+  {btn}
+</button>
+                  {/each}
+                </div>
+              {/if}
             </div>
-          {/each}
+          {/if}
         </div>
       {/each}
     </div>
-  {:else}
-    <div class="button-grid">
-      {#each tabsData[activeTab].buttons as btn}
-        <button class="speak-button" on:click={() => speak(btn)}>{btn}</button>
-      {/each}
+
+    <!-- TABLET+ / DESKTOP VIEW (md and above) -->
+    <div class="hidden md:block">
+
+      <!-- Tab Bar -->
+      <div class="flex overflow-x-auto bg-[#181818] border-b border-[#444]">
+        {#each tabsData as tab, index}
+          <button
+            class="px-6 py-4 text-lg whitespace-nowrap
+                   border-r border-[#444]
+                   transition
+                   {activeTab === index
+                     ? 'bg-[#444] text-white font-semibold'
+                     : 'bg-[#282828] text-[#d0d0d0] hover:bg-[#383838]'}"
+            on:click={() => activeTab = index}
+          >
+            {tab.name}
+          </button>
+        {/each}
+      </div>
+
+      <!-- Tab Content -->
+      <div class="p-6 bg-[#181818]">
+        {#if tabsData[activeTab].layout === 'two-column'}
+          <div class="flex flex-wrap gap-10">
+            {#each tabsData[activeTab].sections as section}
+              <div class="flex-1 min-w-[300px]">
+                <div class="text-[#e0e0e0] font-bold text-xl mb-4">
+                  {section.sectionName}
+                </div>
+
+                {#each section.buttons as row}
+                  <div class="flex flex-wrap gap-4 mb-4">
+                    {#each row as btn}
+                      <button
+                        class="bg-[#303030] text-[#d0d0d0]
+                               rounded-xl
+                               px-5 py-4
+                               text-lg
+                               active:bg-[#606060]
+                               active:scale-95
+                               transition"
+                        on:click={() => speak(btn)}
+                      >
+                        {btn}
+                      </button>
+                    {/each}
+                  </div>
+                {/each}
+              </div>
+            {/each}
+          </div>
+        {:else}
+          <div class="flex flex-wrap gap-4">
+            {#each tabsData[activeTab].buttons as btn}
+              <button
+                class="bg-[#303030] text-[#d0d0d0]
+                       rounded-xl
+                       px-5 py-4
+                       text-lg
+                       active:bg-[#606060]
+                       active:scale-95
+                       transition"
+                on:click={() => speak(btn)}
+              >
+                {btn}
+              </button>
+            {/each}
+          </div>
+        {/if}
+      </div>
+
     </div>
-  {/if}
+
+  </div>
 </div>
